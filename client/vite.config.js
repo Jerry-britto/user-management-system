@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      "/api":"http://localhost:4000"
+      "/api":"https://assignment-git-main-jerrys-projects-43271729.vercel.app/"
     }
   }
 })
