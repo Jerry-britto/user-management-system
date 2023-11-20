@@ -19,8 +19,8 @@ function Navbar() {
   }
 
   const createGroup = async()=>{
-    if(!group){
-      alert("Kindly select the members")
+    if(group.length===0){
+      alert("Kindly select the your group members")
       return;
     }
     if(group.length > 1){
