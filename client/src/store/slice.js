@@ -44,6 +44,9 @@ export const user = createSlice({
     },
     removeFromGroup:(state,action)=>{
       state.group =  state.group.filter((item) => item !== action.payload)
+    },
+    emptyGroup:(state,action)=>{
+      state.group = [];
     }
   },
 });
@@ -58,7 +61,8 @@ export const {
   filterAvailable,
   setChange,
   addToGroup,
-  removeFromGroup
+  removeFromGroup,
+  emptyGroup
 } = user.actions;
 
 export default user.reducer;

@@ -10,7 +10,7 @@ dotenv.config({
 })
 app.use(express.json())
 app.use(cors())
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended:true}))
 app.use("/api",router)
 connectToDB()
 const PORT = process.env.PORT || 4000

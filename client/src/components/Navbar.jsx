@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { searchUser,setChange } from "../store/slice";
+import { searchUser,setChange,emptyGroup } from "../store/slice";
 import { NavLink } from "react-router-dom";
 import Axios from "axios"
 function Navbar() {
   const dispatch = useDispatch();
   const change = useSelector(state=>state.clickable)
   const group = useSelector(state=>state.group)
+  const users = useSelector(state=>state.users)
   // console.log("Groups ",group);
 
   let [val,setVal]=useState("")
@@ -18,6 +19,21 @@ function Navbar() {
   }
 
   const createGroup = async()=>{
+    if(group.length > 1){
+      //checking group member domain and available status
+
+      //retrieving users data
+      const usersInGroup = users.filter(user => group.includes(user._id));
+      const domains = new Set(usersInGroup.map((user)=>user.domain)) //extracting unique domains
+      const availableStatus = new Set(usersInGroup.map((user)=>user.available));
+
+      if(usersInGroup.length!=domains.size || usersInGroup.length!=availableStatus.size){
+        alert("Users in the group must have unique domains and available status");
+        dispatch(emptyGroup())
+        return;
+      }
+    }
+
     let nums = [2,4,6,8,10,12,14,16,69,59,49,9,19,29,39,49,18,20];
     const randomIndex = Math.floor(Math.random() * nums.length);
     const id = Math.floor(Math.random()*1000) + nums[randomIndex];
@@ -25,10 +41,13 @@ function Navbar() {
       id,
       members:group
     }
+
     alert("Group id "+body.id.toString())
-    console.log(body.data);
+
     const res = await Axios.post("/api/team",body)
-    // console.log(res)
+    console.log(res)
+    dispatch(emptyGroup())
+
   }
   return (
     <div className="bg-black w-auto mr-0 p-2 text-white">
