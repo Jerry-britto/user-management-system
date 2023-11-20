@@ -1,1 +1,1 @@
-Created a user friendly website wherein user can make their own groupsc
+Created a user friendly website wherein user can make their own groups
