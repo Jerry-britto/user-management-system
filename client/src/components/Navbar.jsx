@@ -19,6 +19,10 @@ function Navbar() {
   }
 
   const createGroup = async()=>{
+    if(!group){
+      alert("Kindly select the members")
+      return;
+    }
     if(group.length > 1){
       //checking group member domain and available status
 
