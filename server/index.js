@@ -10,11 +10,11 @@ dotenv.config({
 })
 app.use(express.json())
 app.use(cors({
-    origin: 'https://assignment-frontend-sigma.vercel.app',
-    methods: ['GET', 'POST'],
-    credentials: true,
-  }));
-  app.use("/api",router)
+    origin:"*",
+    methods:["GET","POST"],
+    credentials:true
+}))
+ app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
 connectToDB()
 const PORT = process.env.PORT || 4000
