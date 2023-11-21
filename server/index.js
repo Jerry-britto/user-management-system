@@ -10,7 +10,7 @@ dotenv.config({
 })
 app.use(express.json())
 app.use(cors({
-    origin: 'https://assignment-frontend-sigma.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST'],
     credentials: true,
   }));
