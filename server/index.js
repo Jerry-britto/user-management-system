@@ -12,7 +12,8 @@ app.use(express.json())
 app.use(cors(
     {
         origin:["https://deploy-mern-frontend-kohl.vercel.app/"],
-        "credentials":true
+        methods:["POST","GET"],
+        credentials:true
     }
 ))
 app.use(express.urlencoded({extended:true}))
