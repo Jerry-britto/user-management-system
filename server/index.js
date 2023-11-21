@@ -14,8 +14,8 @@ app.use(cors({
     methods: ['GET', 'POST'],
     credentials: true,
   }));
+  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
-app.use("/api",router)
 connectToDB()
 const PORT = process.env.PORT || 4000
 app.listen(PORT,()=>{
