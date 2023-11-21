@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       "/api":{
-        target:"https://deploy-mern-api-rose.vercel.app/",
+        target:"https://deploy-mern-api-rose.vercel.app",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         onError: (err) => {
