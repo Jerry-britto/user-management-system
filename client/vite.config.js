@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      "/api":"https://deploy-mern-api-rose.vercel.app/"
+      "/api":"http://localhost:4000/"
     }
   }
 })
