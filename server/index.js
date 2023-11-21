@@ -9,11 +9,7 @@ dotenv.config({
     path:"./env"
 })
 app.use(express.json())
-app.use(cors({
-    origin:"*",
-    methods:["GET","POST"],
-    credentials:true
-}))
+app.use(cors())
  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
 connectToDB()
