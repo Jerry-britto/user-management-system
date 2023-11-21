@@ -11,7 +11,7 @@ dotenv.config({
 app.use(express.json())
 app.use(cors(
     {
-        origin:["https://deploy-mern-1whq.vercel.app"],
+        origin:["https://deploy-mern-frontend-kohl.vercel.app/"],
         "credentials":true
     }
 ))
