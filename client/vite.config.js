@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       "/api":{
-        target:"https://deploy-mern-api-rose.vercel.app/api/",
+        target:"https://deploy-mern-api-rose.vercel.app/",
         changeOrigin:true,
       }
       
