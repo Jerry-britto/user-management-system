@@ -10,7 +10,7 @@ dotenv.config({
 })
 app.use(express.json())
 app.use(cors({
-    origin:"*";
+    origin:"*"
 }))
  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
