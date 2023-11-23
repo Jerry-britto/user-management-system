@@ -16,6 +16,9 @@ app.use(cors({
 app.use(express.urlencoded({extended:true}))
 connectToDB()
 const PORT = process.env.PORT || 4000
+app.get("/",(req,res)=>{
+    console.log("server connected")
+})
 app.listen(PORT,()=>{
     console.log(`server on https://localhost:${PORT}`)
 })
