@@ -9,9 +9,7 @@ dotenv.config({
     path:"./env"
 })
 app.use(express.json())
-app.use(cors({
-    origin:["https://intern-frontend-iota.vercel.app/"]
-}))
+app.use(cors())
  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
 connectToDB()
