@@ -10,11 +10,12 @@ dotenv.config({
 })
 app.use(express.json())
 app.use(cors())
+app.use(express.static("dist"))
  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
 connectToDB()
 const PORT = process.env.PORT || 4000
 app.listen(PORT,()=>{
-    console.log("server on")
+    console.log(`server on https://localhost:${PORT}`)
 })
 // DefaultData()
