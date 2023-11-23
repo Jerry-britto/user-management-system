@@ -12,7 +12,6 @@ app.use(express.json())
 app.use(cors({
     origin:"*"
 }))
-app.use(express.static("dist"))
  app.use("/api",router)
 app.use(express.urlencoded({extended:true}))
 connectToDB()
