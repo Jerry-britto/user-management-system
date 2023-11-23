@@ -5,7 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      "/api":"https://intern-project-blush.vercel.app/",
+      "/api": {
+        target: "https://intern-project-blush.vercel.app/",
+        changeOrigin: true,
+        secure: false,
+      },
     }
   }
 })
