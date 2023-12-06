@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  users: [],
   name: "",
   domain: "",
   page: 1,
@@ -15,9 +14,6 @@ export const user = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser: (state, action) => {
-      state.users = action.payload;
-    },
     nextPage: (state, action) => {
       state.page = state.page + 1;
     },

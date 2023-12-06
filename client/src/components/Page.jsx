@@ -18,7 +18,7 @@ function Page() {
     }
   }
   return (
-    <div className='flex justify-center my-1 '>
+    <div className='flex justify-center my-1 h-auto'>
         <button className='text-white bg-black p-2 rounded' onClick={prev}>Prev</button>
         <span className='flex flex-col justify-center items-center mx-2'>
           {!name?`${page} of ${totalPage}`:``}

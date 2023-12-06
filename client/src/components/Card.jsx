@@ -42,7 +42,7 @@ function Card({
         <img
           src={avatar}
           alt="Avatar"
-          className="w-20 h-20 rounded-full border-4 border-white"
+          className="w-20  rounded-full border-4 border-white"
         />
       </div>
 

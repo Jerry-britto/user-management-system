@@ -9,11 +9,15 @@ function ShowGroup() {
   // console.log(id);
   const displayGroups = async (e) => {
     e.preventDefault();
-    const res = await Axios.get(`/api/team/${id}`);
-    // console.log(res.data.users)
-    setGroups(res.data.users);
-    const heading = document.querySelector("#heading");
-    heading.classList.remove("hidden");
+    try {
+      const res = await Axios.get(`/api/team/${id}`);
+      // console.log(res.data.users)
+      setGroups(res.data.users);
+      const heading = document.querySelector("#heading");
+      heading.classList.remove("hidden");
+    } catch (error) {
+      alert("Group not found")
+    }
   };
   return (
     <div className="bg-blue-500 bg-cover h-screen flex flex-wrap justify-center">

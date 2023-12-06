@@ -5,18 +5,31 @@ function Filter() {
   const dispatch = useDispatch();
   // console.log(domain)
   function display(e) {
-    dispatch(filterDomain(e.target.value));
+    if(e.target.checked){
+      dispatch(filterDomain(e.target.value));
+    }
+    else{
+      dispatch(filterDomain(""))
+    }
   }
   function display2(e) {
-    console.log(e.target.value);
-    dispatch(filterGender(e.target.value));
+    if(e.target.checked){
+      dispatch(filterGender(e.target.value));
+    }
+    else{
+      dispatch(filterGender(""))
+    }
   }
   function display3(e){
-    console.log(e.target.value);
-    dispatch(filterAvailable(e.target.value))
+    if(e.target.checked){
+      dispatch(filterAvailable(e.target.value))
+    }
+    else{
+      dispatch(filterAvailable(""))
+    }
   }
   return (
-    <div className=" bg-slate-300 relative">
+    <div className=" bg-slate-300 relative h-auto">
       <div className="px-3 mb-2">
         <h4 className="text-lg font-semibold mb-2 ">Domain</h4>
         <div className="mx-2">

@@ -13,9 +13,12 @@ function Navbar() {
   let [val,setVal]=useState("")
   const submitName = (e)=>{
     e.preventDefault();
-    if(!val) return;
-    // val = val[0].toUpperCase()
-    dispatch(searchUser(val))
+    if(!val){
+      dispatch(searchUser(""))
+    }
+    else{
+      dispatch(searchUser(val))
+    }
   }
 
   const createGroup = async()=>{
