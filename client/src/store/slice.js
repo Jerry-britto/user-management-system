@@ -22,6 +22,7 @@ export const user = createSlice({
     },
     searchUser: (state, action) => {
       state.name = action.payload;
+      state.page = 1;
     },
     filterDomain: (state, action) => {
       state.domain = action.payload;
