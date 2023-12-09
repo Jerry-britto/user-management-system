@@ -49,10 +49,9 @@ function Navbar() {
       members:group
     }
 
-    alert("Group id "+body.id.toString())
-
+    
     const res = await Axios.post("/api/team",body)
-    console.log(res)
+    alert("Group id "+body.id.toString())
     dispatch(emptyGroup())
 
   }

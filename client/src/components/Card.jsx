@@ -59,7 +59,7 @@ function Card({
 
         <p className="text-sm flex items-center font-semibold">
           <span className="mr-1">Available</span>
-          <span className="bg-green-500 text-white rounded-full px-2 py-1 text-xs">
+          <span className={available?"bg-green-500 text-white rounded-full px-2 py-1 text-xs mx-auto":"bg-red-500 text-white rounded-full px-2 py-1 text-xs mx-auto"}>
             {available ? "Yes" : "No"}
           </span>
         </p>

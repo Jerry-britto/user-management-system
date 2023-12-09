@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card";
 import Axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { setUser } from "../../store/slice";
 function Container() {
   const [data, setData] = useState([]);
   const pageno = useSelector((state) => state.page);
@@ -9,6 +10,7 @@ function Container() {
   let domain = useSelector((state) => state.domain);
   const gender = useSelector((state) => state.gender);
   const available = useSelector((state) => state.available);
+  const dispatch = useDispatch();
 
   const change = useSelector((state) => state.clickable);
   async function loadData() {
@@ -17,8 +19,10 @@ function Container() {
         `/api/users?page=${pageno}&first_name=${name}&domain=${domain}&gender=${gender}&available=${available}`
       );
       setData(res.data);
+      dispatch(setUser(res.data));
+      
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   }
   useEffect(() => {
