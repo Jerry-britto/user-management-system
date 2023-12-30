@@ -10,7 +10,7 @@ function ShowGroup() {
   const displayGroups = async (e) => {
     e.preventDefault();
     try {
-      const res = await Axios.get(`/api/team/${id}`);
+      const res = await Axios.get(`https://intern-project-blush.vercel.app/api/team/${id}`);
       // console.log(res.data.users)
       setGroups(res.data.users);
       const heading = document.querySelector("#heading");

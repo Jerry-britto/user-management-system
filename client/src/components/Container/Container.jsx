@@ -16,7 +16,7 @@ function Container() {
   async function loadData() {
     try {
       const res = await Axios.get(
-        `/api/users?page=${pageno}&first_name=${name}&domain=${domain}&gender=${gender}&available=${available}`
+        `https://intern-project-blush.vercel.app/api/users?page=${pageno}&first_name=${name}&domain=${domain}&gender=${gender}&available=${available}`
       );
       setData(res.data);
       dispatch(setUser(res.data));

@@ -50,7 +50,7 @@ function Navbar() {
     }
 
     
-    const res = await Axios.post("/api/team",body)
+    const res = await Axios.post("https://intern-project-blush.vercel.app/api/team",body)
     alert("Group id "+body.id.toString())
     dispatch(emptyGroup())
 
